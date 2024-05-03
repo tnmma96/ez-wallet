@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = item_category_selection_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.data.pojo.CategorySelection" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@{viewModel.selectedLiveData ? @drawable/background_item_category_selection_outer_selected : @drawable/background_item_category_selection_outer}"
+        android:padding="@dimen/_2sdp">
+
+        <LinearLayout
+            android:id="@+id/item_category_selection_background_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_item_category_selection_inner"
+            android:backgroundTint="@{viewModel.selectedLiveData ? viewModel.color : @color/transparent}"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_10">
+
+            <ImageView
+                android:id="@+id/item_category_selection_icon"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:src="@drawable/icon_category"
+                app:tint="@{viewModel.selectedLiveData ? viewModel.foregroundColor : @color/ivy_black}" />
+
+            <TextView
+                android:id="@+id/item_category_selection_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:text="@{viewModel.name}"
+                android:textColor="@{viewModel.selectedLiveData ? viewModel.foregroundColor : @color/ivy_black}"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>

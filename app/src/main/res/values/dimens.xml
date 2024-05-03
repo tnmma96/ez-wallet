@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text_size_title">@dimen/_20ssp</dimen>
+
+    <dimen name="spacing_5">@dimen/_5sdp</dimen>
+    <dimen name="spacing_10">@dimen/_10sdp</dimen>
+    <dimen name="spacing_15">@dimen/_15sdp</dimen>
+    <dimen name="spacing_20">@dimen/_20sdp</dimen>
+
+    <dimen name="recycler_view_divider_5">@dimen/_5sdp</dimen>
+    <dimen name="recycler_view_divider_10">@dimen/_10sdp</dimen>
+    <dimen name="recycler_view_divider_15">@dimen/_15sdp</dimen>
+
+
+    <dimen name="item_menu_default_icon_size">@dimen/_18sdp</dimen>
+    <dimen name="item_menu_label_text_size">@dimen/_10ssp</dimen>
+
+    <dimen name="view_amount_keyboard_key_size">@dimen/_45sdp</dimen>
+
+</resources>

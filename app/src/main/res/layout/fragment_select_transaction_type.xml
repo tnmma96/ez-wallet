@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = fragment_select_transaction_type_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.ui.screen.bottomsheet.selecttransactiontype.SelectTransactionTypeViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/fragment_select_transaction_type_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_15"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:text="@{viewModel.titleResId}"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_select_transaction_type_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_15"
+            android:layout_marginVertical="@dimen/spacing_15" />
+
+        <io.tnmma.ezwallet.ui.customview.BottomActionView
+            android:id="@+id/fragment_select_transaction_type_bottom_action"
+            bottomAction="@{viewModel.bottomAction}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</layout>

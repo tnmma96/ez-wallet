@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = item_date_with_balance -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.data.model.DateWithBalance" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/item_date_with_balance_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/item_date_with_balance_formatted_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_5"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{viewModel.formattedDate}"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@id/item_date_with_balance_day_of_week"
+            app:layout_constraintEnd_toStartOf="@id/item_date_with_balance_guideline"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/item_date_with_balance_day_of_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_5"
+            android:layout_marginEnd="@dimen/spacing_5"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{viewModel.formattedDayOfWeek}"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/item_date_with_balance_guideline"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_date_with_balance_formatted_date" />
+
+        <TextView
+            android:id="@+id/item_date_with_balance_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_5"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{viewModel.formattedBalance}"
+            android:textColor="@{viewModel.color}"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@id/item_date_with_balance_day_of_week"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/item_date_with_balance_guideline"
+            app:layout_constraintTop_toTopOf="@id/item_date_with_balance_formatted_date" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

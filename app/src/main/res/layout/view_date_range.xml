@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = view_date_range_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="io.tnmma.ezwallet.base.constant.DateType" />
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.data.model.DateRange" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="@{viewModel.dateTypeLiveData == DateType.ALL_TIME ? View.INVISIBLE : View.VISIBLE}">
+
+        <TextView
+            android:id="@+id/view_date_range_label_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_date_range_from"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@id/view_date_range_value_from"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/view_date_range_value_from" />
+
+        <LinearLayout
+            android:id="@+id/view_date_range_value_from"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_10"
+            android:background="@drawable/background_base_rectangle_corner_20_border_ripple"
+            android:clickable="@{viewModel.dateTypeLiveData == DateType.CUSTOM_RANGE ? true : false}"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/view_date_range_label_from"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_marginVertical="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:src="@drawable/icon_calendar"
+                app:tint="?android:textColor" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_10"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{viewModel.startDateLiveData == null ? @string/hint_select_date : viewModel.formattedStartDateLiveData}"
+                android:textColor="@{viewModel.startDateLiveData == null ? @color/ivy_grey : @color/ivy_black}"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/view_date_range_value_button_remove_from"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:background="@drawable/background_base_oval_ripple"
+                android:backgroundTint="?attr/ivyItemBackgroundColor"
+                android:onClick="@{() -> viewModel.removeStartDate()}"
+                android:padding="@dimen/_12sdp"
+                android:src="@drawable/icon_cancel"
+                android:visibility="@{viewModel.showButtonRemoveStartDateLiveData ? View.VISIBLE : View.GONE}"
+                app:tint="?android:textColor" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/view_date_range_label_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_date_range_to"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@id/view_date_range_value_to"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/view_date_range_value_to" />
+
+        <LinearLayout
+            android:id="@+id/view_date_range_value_to"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:background="@drawable/background_base_rectangle_corner_20_border_ripple"
+            android:clickable="@{viewModel.dateTypeLiveData == DateType.CUSTOM_RANGE ? true : false}"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/view_date_range_value_from"
+            app:layout_constraintStart_toStartOf="@id/view_date_range_value_from"
+            app:layout_constraintTop_toBottomOf="@id/view_date_range_value_from">
+
+            <ImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_marginVertical="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:src="@drawable/icon_calendar"
+                app:tint="?android:textColor" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_10"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{viewModel.endDateLiveData == null ? @string/hint_select_date : viewModel.formattedEndDateLiveData}"
+                android:textColor="@{viewModel.endDateLiveData == null ? @color/ivy_grey : @color/ivy_black}"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/view_date_range_value_button_remove_to"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:background="@drawable/background_base_oval_ripple"
+                android:backgroundTint="?attr/ivyItemBackgroundColor"
+                android:onClick="@{() -> viewModel.removeEndDate()}"
+                android:padding="@dimen/_12sdp"
+                android:src="@drawable/icon_cancel"
+                android:visibility="@{viewModel.showButtonRemoveEndDateLiveData ? View.VISIBLE : View.GONE}"
+                app:tint="?android:textColor" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = fragment_confirm_deletion_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.ui.screen.bottomsheet.confirmdeletion.ConfirmDeletionViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_15"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:text="@string/title_confirm_deletion"
+            android:textColor="@color/ivy_red"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_15"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:layout_marginBottom="@dimen/spacing_15"
+            android:text="@{viewModel.warningResId}"
+            android:textSize="@dimen/_14ssp" />
+
+        <io.tnmma.ezwallet.ui.customview.BottomActionView
+            android:id="@+id/fragment_confirm_deletion_bottom_action"
+            bottomAction="@{viewModel.bottomAction}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</layout>

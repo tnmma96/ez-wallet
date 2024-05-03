@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = view_transaction_account_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="io.tnmma.ezwallet.util.CommonUtil" />
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.data.pojo.Account" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_base_rectangle_corner_20"
+        android:backgroundTint="@{viewModel.color}"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/spacing_5">
+
+        <ImageView
+            android:id="@+id/view_transaction_account_icon"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/spacing_10"
+            android:src="@drawable/icon_account"
+            app:tint="@{viewModel.foregroundColor}" />
+
+        <TextView
+            android:id="@+id/view_transaction_account_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_10"
+            android:ellipsize="end"
+            android:maxWidth="@{CommonUtil.getScreenWidthByPercent(25)}"
+            android:maxLines="2"
+            android:text="@{viewModel.name}"
+            android:textColor="@{viewModel.foregroundColor}"
+            android:textSize="@dimen/_12ssp" />
+
+    </LinearLayout>
+
+</layout>

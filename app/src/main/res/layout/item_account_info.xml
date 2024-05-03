@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = item_account_info_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.data.pojo.Account" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/item_account_info_background_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_base_rectangle_corner_10"
+        android:backgroundTint="@{viewModel.color}"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_10">
+
+        <ImageView
+            android:id="@+id/item_account_info_icon"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/icon_account"
+            app:tint="@{viewModel.foregroundColor}" />
+
+        <TextView
+            android:id="@+id/item_account_info_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_10"
+            android:layout_weight="1"
+            android:text="@{viewModel.name}"
+            android:textColor="@{viewModel.foregroundColor}"
+            android:textSize="@dimen/_24ssp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</layout>

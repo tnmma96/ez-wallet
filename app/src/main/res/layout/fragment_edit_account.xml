@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = fragment_edit_account_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.ui.screen.bottomsheet.editaccount.EditAccountViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/fragment_edit_account_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_15"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:text="@{viewModel.titleResId}"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/fragment_edit_account_row_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/fragment_edit_account_row_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_15"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/fragment_edit_account_list_color"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_account_title">
+
+            <ImageView
+                android:id="@+id/fragment_edit_account_icon"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:background="@drawable/background_base_oval"
+                android:backgroundTint="@{viewModel.selectedBackgroundColorLiveData}"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/icon_account"
+                app:tint="@{viewModel.selectedForegroundColorLiveData}" />
+
+            <EditText
+                android:id="@+id/fragment_edit_account_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_15"
+                android:layout_weight="1"
+                android:backgroundTint="?android:textColor"
+                android:hint="@string/hint_account_name"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="@{viewModel.originalAccountName}"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_edit_account_list_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:layout_marginHorizontal="@dimen/spacing_15"
+            app:layout_constraintBottom_toTopOf="@id/fragment_edit_account_label_enter_balance"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_account_row_info" />
+
+        <TextView
+            android:id="@+id/fragment_edit_account_label_enter_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_15"
+            android:layout_marginTop="@dimen/spacing_20"
+            android:text="@string/label_enter_account_balance"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/fragment_edit_account_formatted_balance"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_account_list_color" />
+
+        <TextView
+            android:id="@+id/fragment_edit_account_formatted_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_15"
+            android:layout_marginVertical="@dimen/spacing_15"
+            android:background="?attr/selectableItemBackground"
+            android:maxLines="1"
+            android:text="@{viewModel.formattedCurrentBalanceLiveData}"
+            android:textSize="@dimen/_30ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/fragment_edit_account_bottom_action"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_account_label_enter_balance" />
+
+        <io.tnmma.ezwallet.ui.customview.BottomActionView
+            android:id="@+id/fragment_edit_account_bottom_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            bottomAction="@{viewModel.bottomAction}"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

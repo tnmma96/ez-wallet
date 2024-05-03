@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = fragment_transaction_detail_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="io.tnmma.ezwallet.base.constant.TransactionType" />
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.ui.screen.detail.transaction.TransactionDetailViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_15"
+            android:layout_marginTop="@dimen/spacing_15">
+
+            <ImageView
+                android:id="@+id/fragment_transaction_detail_button_delete"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/background_base_oval_ripple"
+                android:backgroundTint="@color/ivy_red"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/icon_delete"
+                android:visibility="@{viewModel.showButtonDelete ? View.VISIBLE : View.GONE}"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/fragment_transaction_detail_button_type"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/fragment_transaction_detail_button_type"
+                app:tint="@color/ivy_white" />
+
+            <io.tnmma.ezwallet.ui.customview.TransactionDetailTypeView
+                android:id="@+id/fragment_transaction_detail_button_type"
+                transactionDetailType="@{viewModel.transactionDetailType}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/spacing_15"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:layout_weight="1"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/fragment_transaction_detail_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="?android:textColor"
+                    android:hint="@string/hint_transaction_title"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:text="@{viewModel.originalTitle}"
+                    android:textSize="@dimen/_24ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fragment_transaction_detail_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/spacing_15"
+                    android:background="?attr/selectableItemBackground"
+                    android:maxLines="1"
+                    android:text="@{viewModel.formattedAmountLiveData}"
+                    android:textSize="@dimen/_30ssp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/fragment_transaction_detail_row_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_15"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <io.tnmma.ezwallet.ui.customview.TransactionDetailAccountView
+                        android:id="@+id/fragment_transaction_detail_src_account"
+                        transactionDetailAccount="@{viewModel.transactionSrcAccount}"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <FrameLayout
+                        android:id="@+id/fragment_transaction_detail_right_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/spacing_15"
+                        android:visibility="@{viewModel.transactionTypeLiveData == TransactionType.TRANSFER ? View.VISIBLE : View.GONE}">
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:src="@drawable/icon_right" />
+
+                    </FrameLayout>
+
+                    <io.tnmma.ezwallet.ui.customview.TransactionDetailAccountView
+                        android:id="@+id/fragment_transaction_detail_dst_account"
+                        transactionDetailAccount="@{viewModel.transactionDstAccount}"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:visibility="@{viewModel.transactionTypeLiveData == TransactionType.TRANSFER ? View.VISIBLE : View.GONE}" />
+
+                </LinearLayout>
+
+                <io.tnmma.ezwallet.ui.customview.TransactionDetailDateView
+                    android:id="@+id/fragment_transaction_detail_date"
+                    transactionDetailDate="@{viewModel.transactionDetailDate}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_15" />
+
+                <View
+                    android:id="@+id/fragment_transaction_detail_separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/spacing_15"
+                    android:background="@color/ivy_grey_alpha_50" />
+
+                <io.tnmma.ezwallet.ui.customview.TransactionDetailCategoryView
+                    android:id="@+id/fragment_transaction_detail_category"
+                    transactionDetailCategory="@{viewModel.transactionDetailCategory}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_15"
+                    android:visibility="@{viewModel.transactionTypeLiveData == TransactionType.TRANSFER ? View.GONE : View.VISIBLE}"
+                    app:layout_constrainedWidth="true" />
+
+                <io.tnmma.ezwallet.ui.customview.TransactionDetailDescriptionView
+                    android:id="@+id/fragment_transaction_detail_description"
+                    transactionDetailDescription="@{viewModel.transactionDetailDescription}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_15"
+                    android:layout_marginBottom="@dimen/spacing_15"
+                    app:layout_goneMarginTop="@dimen/spacing_15" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <io.tnmma.ezwallet.ui.customview.BottomActionView
+            android:id="@+id/fragment_transaction_detail_bottom_action"
+            bottomAction="@{viewModel.bottomAction}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</layout>

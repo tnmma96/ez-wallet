@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = view_amount_keyboard_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="io.tnmma.ezwallet.base.constant.KeyCode" />
+
+    </data>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:orientation="vertical">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_3"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_3}"
+                android:text="@string/label_key_3"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_2"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_2}"
+                android:text="@string/label_key_2"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_1"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_1}"
+                android:text="@string/label_key_1"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow android:layout_marginTop="@dimen/spacing_10">
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_6"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_6}"
+                android:text="@string/label_key_6"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_5"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_5}"
+                android:text="@string/label_key_5"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_4"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_4}"
+                android:text="@string/label_key_4"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow android:layout_marginTop="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_9"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_9}"
+                android:text="@string/label_key_9"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_8"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_8}"
+                android:text="@string/label_key_8"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_7"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_7}"
+                android:text="@string/label_key_7"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_negative"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_NEGATIVE}"
+                android:text="@string/label_key_negative"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow android:layout_marginTop="@dimen/spacing_10">
+
+            <ImageView
+                android:id="@+id/view_amount_keyboard_key_backspace"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:padding="@dimen/_12sdp"
+                android:src="@drawable/icon_backspace"
+                android:tag="@{KeyCode.KEY_BACKSPACE}"
+                app:tint="@color/ivy_red" />
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_0"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_0}"
+                android:text="@string/label_key_0"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_decimal"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_DECIMAL}"
+                android:text="@string/label_key_decimal"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/view_amount_keyboard_key_clear"
+                android:layout_width="@dimen/view_amount_keyboard_key_size"
+                android:layout_height="@dimen/view_amount_keyboard_key_size"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:background="@drawable/background_base_oval_border_ripple"
+                android:gravity="center"
+                android:tag="@{KeyCode.KEY_CLEAR}"
+                android:text="@string/label_key_clear"
+                android:textColor="@color/ivy_red"
+                android:textSize="@dimen/_22ssp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</layout>

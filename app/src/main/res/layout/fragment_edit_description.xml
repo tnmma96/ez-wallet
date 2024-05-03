@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = fragment_edit_description_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.ui.screen.bottomsheet.editdescription.EditDescriptionViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/fragment_edit_description_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_15"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:text="@string/title_edit_description"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/fragment_edit_description_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/fragment_edit_description_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_15"
+            android:layout_marginVertical="@dimen/spacing_15"
+            android:backgroundTint="@color/transparent"
+            android:gravity="start"
+            android:hint="@string/hint_transaction_description"
+            android:inputType="textMultiLine"
+            android:text="@{viewModel.originalDescription}"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toTopOf="@id/fragment_edit_description_bottom_action"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_description_title" />
+
+        <io.tnmma.ezwallet.ui.customview.BottomActionView
+            android:id="@+id/fragment_edit_description_bottom_action"
+            bottomAction="@{viewModel.bottomAction}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_edit_description_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

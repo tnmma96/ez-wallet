@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = item_account_income_expense_info_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.data.model.AccountIncomeExpenseInfo" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/background_base_rectangle_corner_10"
+            android:backgroundTint="?attr/ivyItemBackgroundColor">
+
+            <ImageView
+                android:id="@+id/item_account_income_expense_info_icon_income"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:layout_marginTop="@dimen/spacing_10"
+                android:background="@drawable/background_base_oval"
+                android:backgroundTint="@color/ivy_green"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/icon_income"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/ivy_white" />
+
+            <TextView
+                android:id="@+id/item_account_income_expense_info_label_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:text="@string/label_account_income"
+                app:layout_constraintBottom_toBottomOf="@id/item_account_income_expense_info_icon_income"
+                app:layout_constraintStart_toEndOf="@id/item_account_income_expense_info_icon_income"
+                app:layout_constraintTop_toTopOf="@id/item_account_income_expense_info_icon_income" />
+
+            <TextView
+                android:id="@+id/item_account_income_expense_info_amount_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_10"
+                android:layout_marginTop="@dimen/spacing_10"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{viewModel.formattedIncomeAmount}"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_account_income_expense_info_icon_income" />
+
+            <TextView
+                android:id="@+id/item_account_income_expense_info_count_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_10"
+                android:layout_marginTop="@dimen/spacing_10"
+                android:text="@{viewModel.formattedIncomeTransactionCount}"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_account_income_expense_info_amount_income" />
+
+            <TextView
+                android:id="@+id/item_account_income_expense_info_label_count_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:text="@string/label_transaction_count"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_account_income_expense_info_count_income" />
+
+            <LinearLayout
+                android:id="@+id/item_account_income_expense_info_button_add_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/spacing_10"
+                android:background="@drawable/background_base_rectangle_corner_20_ripple"
+                android:backgroundTint="@color/ivy_green"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_account_income_expense_info_label_count_income">
+
+                <ImageView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:src="@drawable/icon_add"
+                    app:tint="@color/ivy_white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_10"
+                    android:text="@string/label_button_add"
+                    android:textColor="@color/ivy_white" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Space
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="match_parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/background_base_rectangle_corner_10"
+            android:backgroundTint="?attr/ivyItemBackgroundColor">
+
+            <ImageView
+                android:id="@+id/item_account_income_expense_info_icon_expense"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:layout_marginTop="@dimen/spacing_10"
+                android:background="@drawable/background_base_oval"
+                android:backgroundTint="@color/ivy_red"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/icon_expense"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/ivy_white" />
+
+            <TextView
+                android:id="@+id/item_account_income_expense_info_label_expense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:text="@string/label_account_expense"
+                app:layout_constraintBottom_toBottomOf="@id/item_account_income_expense_info_icon_expense"
+                app:layout_constraintStart_toEndOf="@id/item_account_income_expense_info_icon_expense"
+                app:layout_constraintTop_toTopOf="@id/item_account_income_expense_info_icon_expense" />
+
+            <TextView
+                android:id="@+id/item_account_income_expense_info_amount_expense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_10"
+                android:layout_marginTop="@dimen/spacing_10"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{viewModel.formattedExpenseAmount}"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_account_income_expense_info_icon_expense" />
+
+            <TextView
+                android:id="@+id/item_account_income_expense_info_count_expense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_10"
+                android:layout_marginTop="@dimen/spacing_10"
+                android:text="@{viewModel.formattedExpenseTransactionCount}"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_account_income_expense_info_amount_expense" />
+
+            <TextView
+                android:id="@+id/item_account_income_expense_info_label_count_expense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_10"
+                android:text="@string/label_transaction_count"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_account_income_expense_info_count_expense" />
+
+            <LinearLayout
+                android:id="@+id/item_account_income_expense_info_button_add_expense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/spacing_10"
+                android:background="@drawable/background_base_rectangle_corner_20_ripple"
+                android:backgroundTint="@color/ivy_red"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_6sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/item_account_income_expense_info_label_count_expense">
+
+                <ImageView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:src="@drawable/icon_add"
+                    app:tint="@color/ivy_white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_10"
+                    android:text="@string/label_button_add"
+                    android:textColor="@color/ivy_white" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>

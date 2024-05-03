@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = item_transaction_with_details_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.data.pojo.TransactionWithDetails" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_base_rectangle_corner_10_ripple"
+        android:backgroundTint="?attr/ivyItemBackgroundColor"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/item_transaction_with_details_row_account_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_10"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <io.tnmma.ezwallet.ui.customview.TransactionAccountView
+                android:id="@+id/item_transaction_with_details_src_account"
+                transactionAccount="@{viewModel.srcAccount}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@+id/item_transaction_with_details_container_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/spacing_5">
+
+                <ImageView
+                    android:id="@+id/item_transaction_with_details_right_arrow"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_right"
+                    android:visibility="@{viewModel.transferTransaction ? View.VISIBLE : View.GONE}"
+                    app:tint="?android:textColor" />
+
+            </FrameLayout>
+
+            <io.tnmma.ezwallet.ui.customview.TransactionCategoryView
+                android:id="@+id/item_transaction_with_details_category"
+                transactionCategory="@{viewModel.category}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.showCategory ? View.VISIBLE : View.GONE}" />
+
+            <io.tnmma.ezwallet.ui.customview.TransactionAccountView
+                android:id="@+id/item_transaction_with_details_dst_account"
+                transactionAccount="@{viewModel.dstAccount}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.transferTransaction ? View.VISIBLE : View.GONE}" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_transaction_with_details_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_10"
+            android:layout_marginVertical="@dimen/spacing_15"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{viewModel.title}"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold" />
+
+        <io.tnmma.ezwallet.ui.customview.TransactionTypeAndAmountView
+            android:id="@+id/item_transaction_with_details_type_and_amount"
+            transactionTypeAndAmount="@{viewModel.transactionTypeAndAmountModel}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_10"
+            android:layout_marginBottom="@dimen/spacing_15" />
+
+    </LinearLayout>
+
+</layout>

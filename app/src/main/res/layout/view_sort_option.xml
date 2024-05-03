@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = view_sort_option_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.data.model.SortOption" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_base_rectangle_corner_20_border_ripple"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_10">
+
+        <ImageView
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:src="@{viewModel.sortTypeIconLiveData}"
+            app:tint="?android:textColor" />
+
+        <ImageView
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/spacing_10"
+            android:src="@{viewModel.sortOrderIconLiveData}"
+            app:tint="?android:textColor" />
+
+    </LinearLayout>
+
+</layout>

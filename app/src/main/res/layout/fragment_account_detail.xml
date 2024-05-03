@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = fragment_account_detail_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.ui.screen.detail.account.AccountDetailViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fragment_account_detail_button_delete"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/spacing_15"
+            android:background="@drawable/background_base_oval_ripple"
+            android:backgroundTint="@color/ivy_red"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/icon_delete"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_account_detail_button_date_option"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/fragment_account_detail_button_date_option"
+            app:tint="@color/ivy_white" />
+
+        <io.tnmma.ezwallet.ui.customview.DateOptionView
+            android:id="@+id/fragment_account_detail_button_date_option"
+            dateOption="@{viewModel.dateOption}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:layout_marginEnd="@dimen/spacing_15"
+            app:layout_constraintBottom_toTopOf="@id/fragment_account_detail_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_account_detail_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/spacing_15"
+            android:layout_marginTop="@dimen/spacing_15"
+            app:layout_constraintBottom_toTopOf="@id/fragment_account_detail_bottom_action"
+            app:layout_constraintTop_toBottomOf="@id/fragment_account_detail_button_date_option" />
+
+        <io.tnmma.ezwallet.ui.customview.BottomActionView
+            android:id="@+id/fragment_account_detail_bottom_action"
+            bottomAction="@{viewModel.bottomAction}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_account_detail_list"
+            app:layout_constraintVertical_bias="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = item_category_with_details_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="io.tnmma.ezwallet.base.constant.CategoryType" />
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.data.pojo.CategoryWithDetails" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_base_rectangle_corner_10_border">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/item_category_with_details_guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <LinearLayout
+            android:id="@+id/item_category_with_details_background_color"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/_1sdp"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:background="@drawable/background_item_category_with_details_color"
+            android:backgroundTint="@{viewModel.color}"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/item_category_with_details_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/item_category_with_details_icon"
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:src="@drawable/icon_category"
+                app:tint="@{viewModel.foregroundColor}" />
+
+            <TextView
+                android:id="@+id/item_category_with_details_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@{viewModel.name}"
+                android:textColor="@{viewModel.foregroundColor}"
+                android:textSize="@dimen/_14ssp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_category_with_details_label_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_10"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/label_category_total_amount"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_category_with_details_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_category_with_details_value_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_10"
+            android:layout_marginTop="@dimen/spacing_10"
+            android:layout_marginBottom="@dimen/spacing_15"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{viewModel.formattedTotalAmount}"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_category_with_details_guideline"
+            app:layout_constraintTop_toBottomOf="@id/item_category_with_details_label_amount" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

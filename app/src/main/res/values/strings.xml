@@ -1,0 +1,141 @@
+<resources>
+
+    <string name="app_name">EZ Wallet</string>
+
+    <string name="label_menu_home">Home</string>
+    <string name="label_menu_account">Account</string>
+    <string name="label_menu_category">Category</string>
+    <string name="label_menu_user">User</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_account">Account</string>
+    <string name="title_category">Category</string>
+    <string name="title_user">User</string>
+
+    <string name="title_create_account">Create new account</string>
+    <string name="title_edit_account">Edit account</string>
+    <string name="title_create_category">Create new category</string>
+    <string name="title_edit_category">Edit category</string>
+    <string name="title_create_transaction">Create new transaction</string>
+    <string name="title_select_date">Select date</string>
+    <string name="title_select_sort_option">Sort by</string>
+    <string name="title_select_transaction_type">Select transaction type</string>
+    <string name="title_select_category_type">Select category type</string>
+    <string name="title_select_account">Select account</string>
+    <string name="title_select_category">Select category</string>
+    <string name="title_edit_description">Edit description</string>
+    <string name="title_edit_transaction_amount">Edit transaction amount</string>
+    <string name="title_edit_account_balance">Edit account balance</string>
+    <string name="title_confirm_deletion">Confirm deletion</string>
+
+    <string name="label_select_sort_order">In order</string>
+    <string name="label_select_color">Select color</string>
+    <string name="label_select_account_from">From</string>
+    <string name="label_select_account_to">To</string>
+    <string name="label_enter_account_balance">Enter account balance</string>
+
+    <string name="hint_select_account">Select account</string>
+    <string name="hint_select_category">Select category</string>
+    <string name="hint_select_date">Select date</string>
+    <string name="hint_account_name">Account name</string>
+    <string name="hint_category_name">Category name</string>
+    <string name="hint_transaction_title">Transaction title</string>
+    <string name="hint_transaction_description">Transaction description</string>
+
+    <string name="label_transaction_type_income">Income</string>
+    <string name="label_transaction_type_expense">Expense</string>
+    <string name="label_transaction_type_transfer">Transfer</string>
+
+    <string name="label_date_type_today">Today</string>
+    <string name="label_date_type_this_week">This week</string>
+    <string name="label_date_type_this_month">This month</string>
+    <string name="label_date_type_this_year">This year</string>
+    <string name="label_date_type_all_time">All time</string>
+    <string name="label_date_type_custom_range">Custom range</string>
+
+    <string name="label_sort_type_created_time">Created time</string>
+    <string name="label_sort_type_name">Name</string>
+    <string name="label_sort_type_balance">Balance</string>
+    <string name="label_sort_type_amount">Amount</string>
+    <string name="label_sort_type_income">Income</string>
+    <string name="label_sort_type_expense">Expense</string>
+
+    <string name="label_category_type_income">Income</string>
+    <string name="label_category_type_expense">Expense</string>
+
+    <string name="label_bottom_action_add">Add</string>
+    <string name="label_bottom_action_delete">Delete</string>
+    <string name="label_bottom_action_edit">Edit</string>
+    <string name="label_bottom_action_save">Save</string>
+    <string name="label_bottom_action_select">Select</string>
+    <string name="label_bottom_action_set">Set</string>
+
+    <string name="label_day_of_week_yesterday">Yesterday</string>
+    <string name="label_day_of_week_today">Today</string>
+    <string name="label_day_of_week_tomorrow">Tomorrow</string>
+
+    <string name="label_key_0">0</string>
+    <string name="label_key_1">1</string>
+    <string name="label_key_2">2</string>
+    <string name="label_key_3">3</string>
+    <string name="label_key_4">4</string>
+    <string name="label_key_5">5</string>
+    <string name="label_key_6">6</string>
+    <string name="label_key_7">7</string>
+    <string name="label_key_8">8</string>
+    <string name="label_key_9">9</string>
+    <string name="label_key_decimal">.</string>
+    <string name="label_key_negative">-</string>
+    <string name="label_key_clear">C</string>
+
+    <string name="label_account_income">Income</string>
+    <string name="label_account_total_income">TOTAL INCOME</string>
+    <string name="label_account_expense">Expense</string>
+    <string name="label_account_total_expense">TOTAL EXPENSE</string>
+    <string name="label_category_total_amount">TOTAL AMOUNT</string>
+    <string name="label_transaction_count">transactions</string>
+
+    <string name="error_account_empty_id">Account ID is empty!</string>
+    <string name="error_account_empty_name">Please enter account name!</string>
+    <string name="error_account_invalid_color">Please select a valid color!</string>
+    <string name="error_account_empty_created_time">Account created time is empty!</string>
+    <string name="error_account_save_failed">Failed to save account!</string>
+    <string name="error_account_delete_failed">Failed to delete account!</string>
+
+    <string name="error_category_empty_id">Category ID is empty!</string>
+    <string name="error_category_empty_name">Please enter category name!</string>
+    <string name="error_category_empty_category_type">Please select a valid category type!</string>
+    <string name="error_category_invalid_color">Please select a valid color!</string>
+    <string name="error_category_empty_created_time">Category created time is empty!</string>
+    <string name="error_category_save_failed">Failed to save category!</string>
+    <string name="error_category_delete_failed">Failed to delete category!</string>
+
+    <string name="error_transaction_empty_id">Transaction ID is empty!</string>
+    <string name="error_transaction_empty_transaction_type">Please select a valid transaction type!</string>
+    <string name="error_transaction_empty_src_account">Please select a source account!</string>
+    <string name="error_transaction_empty_dst_account">Please select a destination account!</string>
+    <string name="error_transaction_income_expense_with_dst_account">Destination account can only be selected in a transfer transaction!</string>
+    <string name="error_transaction_transfer_with_same_src_dst">Destination account must be different from source account!</string>
+    <string name="error_transaction_transfer_with_category">Category can only be selected in either an income transaction or an expense transaction!</string>
+    <string name="error_transaction_invalid_category_type">Invalid category type!</string>
+    <string name="error_transaction_zero_amount">Transaction amount must be positive!</string>
+    <string name="error_transaction_empty_title">Please enter transaction title!</string>
+    <string name="error_transaction_empty_date">Please select a date!</string>
+    <string name="error_transaction_empty_created_time">Transaction created time is empty!</string>
+    <string name="error_transaction_save_failed">Failed to save transaction!</string>
+    <string name="error_transaction_delete_failed">Failed to delete transaction!</string>
+
+    <string name="error_custom_date_range_no_date_selected">Please select at least a date!</string>
+
+    <string name="warning_account_deletion">Warning: Deleting this account will also delete all associated transactions.</string>
+    <string name="warning_category_deletion">Warning: Deleting this category will also leave all associated transactions with no category.</string>
+    <string name="warning_transaction_deletion">Warning: Deleting this transaction will also update the balance accordingly.</string>
+
+    <string name="label_button_add">Add</string>
+
+    <string name="label_date_range_from">From</string>
+    <string name="label_date_range_to">To</string>
+
+    <string name="title_transaction_adjust_balance">Adjust balance</string>
+
+</resources>

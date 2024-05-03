@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = item_sort_order_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.data.model.SortOrderItem" />
+
+    </data>
+
+    <ImageView
+        android:layout_width="@dimen/_36sdp"
+        android:layout_height="@dimen/_36sdp"
+        android:background="@drawable/background_base_oval"
+        android:backgroundTint="@{viewModel.selectedLiveData ? @color/ivy_blue : @color/ivy_medium_white}"
+        android:padding="@dimen/spacing_10"
+        android:src="@{viewModel.iconResId}"
+        app:tint="@{viewModel.selectedLiveData ? @color/ivy_white : @color/ivy_black}" />
+
+</layout>

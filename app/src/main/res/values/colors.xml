@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Ivy colors -->
+
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="ivy_blue">#FF2196F3</color>
+    <color name="ivy_blue_alpha_50">#7F2196F3</color>
+
+    <color name="ivy_black">#FF111114</color>
+    <color name="ivy_medium_black">#2B2C2D</color>
+
+    <color name="ivy_white">#FFFAFAFA</color>
+    <color name="ivy_medium_white">#FFEFEEF0</color>
+
+    <color name="ivy_grey">#FF939199</color>
+    <color name="ivy_grey_alpha_50">#7F939199</color>
+    <color name="ivy_medium_grey">#FFD3D3D3</color>
+
+    <color name="ivy_green">#FF14CC9E</color>
+    <color name="ivy_green_alpha_50">#7F14CC9E</color>
+
+    <color name="ivy_red">#FFFF4D6B</color>
+    <color name="ivy_red_alpha_50">#7FFF4D6B</color>
+    <color name="ivy_medium_red">#FFFF94A6</color>
+
+    <color name="ivy_purple">#FF6B4DFF</color>
+    <color name="ivy_purple_alpha_50">#7F6B4DFF</color>
+
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = view_menu_type_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.data.model.MenuTypeItem" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/view_menu_type_highlighter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/ivy_blue"
+            android:visibility="@{viewModel.selectedLiveData ? View.VISIBLE : View.INVISIBLE}" />
+
+        <ImageView
+            android:id="@+id/view_menu_type_icon"
+            android:layout_width="@dimen/item_menu_default_icon_size"
+            android:layout_height="@dimen/item_menu_default_icon_size"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:src="@{viewModel.iconResId}"
+            app:tint="@{viewModel.selectedLiveData ? @color/ivy_blue : @color/ivy_grey}" />
+
+        <TextView
+            android:id="@+id/view_menu_type_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:maxLines="1"
+            android:text="@{viewModel.labelResId}"
+            android:textColor="@{viewModel.selectedLiveData ? @color/ivy_blue : @color/ivy_grey}"
+            android:textSize="@dimen/item_menu_label_text_size" />
+
+    </LinearLayout>
+</layout>

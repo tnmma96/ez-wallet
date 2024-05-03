@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Common prefix for view ID = item_account_with_details_ -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.tnmma.ezwallet.data.pojo.AccountWithDetails" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_base_rectangle_corner_10_border">
+
+        <LinearLayout
+            android:id="@+id/item_account_with_details_background_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:background="@drawable/background_item_account_with_details_color"
+            android:backgroundTint="@{viewModel.color}"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_10"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/item_account_with_details_icon"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:src="@drawable/icon_account"
+                    app:tint="@{viewModel.foregroundColor}" />
+
+                <TextView
+                    android:id="@+id/item_account_with_details_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_10"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@{viewModel.name}"
+                    android:textColor="@{viewModel.foregroundColor}"
+                    android:textSize="@dimen/_14ssp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/item_account_with_details_current_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_10"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{viewModel.formattedCurrentBalance}"
+                android:textColor="@{viewModel.foregroundColor}"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/item_account_with_details_label_income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/label_account_total_income"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="@id/item_account_with_details_separator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_account_with_details_background_color" />
+
+        <TextView
+            android:id="@+id/item_account_with_details_value_income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_10"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{viewModel.formattedTotalIncome}"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/item_account_with_details_separator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_account_with_details_label_income" />
+
+        <View
+            android:id="@+id/item_account_with_details_separator"
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="0dp"
+            android:background="@color/ivy_grey_alpha_50"
+            app:layout_constraintBottom_toBottomOf="@id/item_account_with_details_value_income"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/item_account_with_details_label_income" />
+
+        <TextView
+            android:id="@+id/item_account_with_details_label_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/label_account_total_expense"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBaseline_toBaselineOf="@id/item_account_with_details_label_income"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/item_account_with_details_separator" />
+
+        <TextView
+            android:id="@+id/item_account_with_details_value_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_10"
+            android:text="@{viewModel.formattedTotalExpense}"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/item_account_with_details_value_income"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/item_account_with_details_separator" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

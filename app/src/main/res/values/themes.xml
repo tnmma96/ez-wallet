@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EzWallet" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="android:windowBackground">@color/ivy_white</item>
+        <item name="android:textColor">@color/ivy_black</item>
+        <item name="android:statusBarColor">@color/ivy_white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:colorControlHighlight">@color/ivy_medium_grey</item>
+        <item name="android:editTextColor">@color/ivy_black</item>
+        <item name="android:textColorHint">@color/ivy_grey</item>
+        <item name="android:datePickerDialogTheme">
+            @style/Base.Theme.EzWallet.DatePickerDialog
+        </item>
+        <item name="bottomSheetDialogTheme">
+            @style/Base.Theme.EzWallet.BottomSheetDialog
+        </item>
+        <item name="ivyItemBackgroundColor">@color/ivy_medium_white</item>
+    </style>
+
+    <style name="Base.Theme.EzWallet.BottomSheetDialog" parent="Theme.Material3.DayNight.BottomSheetDialog">
+        <item name="android:colorControlHighlight">@color/ivy_medium_grey</item>
+        <item name="android:editTextColor">@color/ivy_black</item>
+        <item name="android:textColorHint">@color/ivy_grey</item>
+    </style>
+
+    <style name="Base.Theme.EzWallet.DatePickerDialog" parent="ThemeOverlay.Material3.Dialog">
+        <item name="colorAccent">@color/ivy_blue</item>
+        <item name="android:windowBackground">@color/ivy_white</item>
+        <item name="android:textColorPrimary">@color/ivy_black</item>
+        <item name="android:textColorSecondary">@color/ivy_black</item>
+        <item name="android:textColorPrimaryInverse">@color/ivy_white</item>
+        <item name="android:textColorSecondaryInverse">@color/ivy_white</item>
+        <item name="colorControlHighlight">@color/ivy_medium_grey</item>
+        <item name="colorControlActivated">@color/ivy_blue</item>
+        <item name="android:buttonBarPositiveButtonStyle">
+            @style/Base.Theme.EzWallet.DatePickerDialog.Button
+        </item>
+        <item name="android:buttonBarNegativeButtonStyle">
+            @style/Base.Theme.EzWallet.DatePickerDialog.Button
+        </item>
+    </style>
+
+    <style name="Base.Theme.EzWallet.DatePickerDialog.Button" parent="ThemeOverlay.Material3.Button">
+        <item name="android:textColor">@color/ivy_blue</item>
+    </style>
+
+</resources>
