@@ -31,7 +31,7 @@ Click [here](https://www.figma.com/file/tl7m8u09Brhas0Ws4AHVCq/EZ-Wallet) to vie
 
 - Create a consistent style for dimension and widget
 - Save and restore UI states in case of configuration changes, process death, ...
-Consider using [Jetpack Navigation](https://developer.android.com/guide/navigation)
+  Consider using [Jetpack Navigation](https://developer.android.com/guide/navigation)
 - Implement DI with [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
 
 ### Functional
