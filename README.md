@@ -4,6 +4,15 @@ EZ Wallet is my attempt to create a simple money manager based on [Ivy Wallet](h
 
 Click [here](https://www.figma.com/file/tl7m8u09Brhas0Ws4AHVCq/EZ-Wallet) to view app icon design.
 
+## Features
+
+- Monitor multiple accounts with balance, total income and total expense
+- Create multiple categories to categorize income and expense transactions
+- Custom colors for accounts and categories
+- 3 transaction types: Income, expense and transfer between 2 accounts
+- Sort account list and category list by multiple fields
+- Filter transactions by date with detailed information
+
 ## Screenshots
 
 |   |   |   |
@@ -11,8 +20,6 @@ Click [here](https://www.figma.com/file/tl7m8u09Brhas0Ws4AHVCq/EZ-Wallet) to vie
 |![Home](images/home_1.jpg)|![Home](images/home_2.jpg)|![Income transaction](images/transaction_income.jpg)|
 |![Account](images/account.jpg)|![Account detail](images/account_detail.jpg)|![Expense transaction](images/transaction_expense.jpg)|
 |![Category](images/category_income.jpg)|![Category detail](images/category_detail_income.jpg)|![Transfer transaction](images/transaction_transfer.jpg)|
-
----
 
 ## Technical details
 
@@ -23,16 +30,15 @@ Click [here](https://www.figma.com/file/tl7m8u09Brhas0Ws4AHVCq/EZ-Wallet) to vie
 - ViewModel and LiveData for UI states
 - RecyclerView with ListAdapter and DiffUtil for displaying live data list
 
----
-
 ## To do
 
 ### Technical
 
+- Continue to refactor and optimize code
 - Create a consistent style for dimension and widget
 - Save and restore UI states in case of configuration changes, process death, ...\
   Consider using [Jetpack Navigation](https://developer.android.com/guide/navigation)
-- Implement DI with [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+- Implement DI with [Dagger](https://developer.android.com/training/dependency-injection/dagger-android) and [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
 
 ### Functional
 
