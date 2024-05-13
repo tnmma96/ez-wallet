@@ -4,6 +4,8 @@ EZ Wallet is my attempt to create a simple money manager based on [Ivy Wallet](h
 
 Click [here](https://www.figma.com/file/tl7m8u09Brhas0Ws4AHVCq/EZ-Wallet) to view app icon design.
 
+Click [here](https://appforshare.io/i/YFBf7x) to install the app.
+
 ## Features
 
 - Monitor multiple accounts with balance, total income and total expense
