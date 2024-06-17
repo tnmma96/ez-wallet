@@ -4,7 +4,7 @@ EZ Wallet is my attempt to create a simple money manager based on [Ivy Wallet](h
 
 Click [here](https://www.figma.com/file/tl7m8u09Brhas0Ws4AHVCq/EZ-Wallet) to view app icon design.
 
-Click [here](https://appforshare.io/i/0pOfKH) to download and install the app.
+Click [here](https://appforshare.io/i/61ekly) to download and install the app.
 
 ## Features
 
